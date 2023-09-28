@@ -1,5 +1,8 @@
 <ul class='flex justify-center'>
-  <li class='navbar'> <%= link_to 'login', new_user_session_path %> </li>
-  <li class='navbar'> <%= link_to 'signup', new_user_registration_path %> </li>
-  <li class='navbar'> <%= link_to 'logout', destroy_user_session_path(params[:id]), data: { turbo_method: :delete }%></li>
+  <% if current_user %>
+    <li class='navbar'> <%= link_to 'logout', destroy_user_session_path(params[:id]), data: { turbo_method: :delete }%></li>
+  <% else %>
+    <li class='navbar'> <%= link_to 'login', new_user_session_path %> </li>
+    <li class='navbar'> <%= link_to 'signup', new_user_registration_path %> </li>
+  <% end %>
 </ul>

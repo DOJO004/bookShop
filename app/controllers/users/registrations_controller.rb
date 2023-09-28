@@ -1,17 +1,23 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :configure_sign_up_params, only: [:create]
+  before_action :authenticate_user!
+  before_action :user_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
-  # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    @user = User.new
+  end
 
-  # POST /resource
   def create
-    redirect_to select_role_path
+   @user = User.new(user_params)
+   if @user.save
+    sign_in @user
+    redirect_to select_role_path 
+   else
+    flash.now[:alert] = 'check field'
+    render :new
+   end
   end
 
   # GET /resource/edit
@@ -38,11 +44,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  private
 
   # If you have extra params to permit, append them to the sanitizer.
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
   # If you have extra params to permit, append them to the sanitizer.
