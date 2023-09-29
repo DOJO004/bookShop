@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root to: 'books#index' 
 
+  resources :books
+
   get 'select_role', to: 'users#select_role'
   post 'select_store', to: 'users#select_store'
   post 'select_client', to: 'users#select_client'
