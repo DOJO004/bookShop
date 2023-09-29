@@ -3,7 +3,81 @@
 @tailwind utilities;
 
 @layer components {
+  h1 {
+    @apply text-2xl font-bold text-gray-800 my-4;
+  }
+
+  h2 {
+    @apply text-xl font-bold text-gray-600 my-4;
+  }
+
+  h3 {
+    @apply text-lg font-bold text-gray-400 my-4;
+  }
+
+  h4 {
+    @apply text-base font-bold text-gray-300 my-4;
+  }
+
+  input {
+    @apply block;
+  }
+
+  input[type='text'] {
+    @apply p-2 border border-gray-300 rounded text-base;
+  }
+
+  input[type='text']:hover {
+    @apply border-gray-500;
+  }
+
+  input[type='text']:focus {
+    @apply outline-none border-blue-500 shadow-outline-blue;
+  }
+
+  input[type='text']:disabled {
+    @apply bg-gray-300 cursor-not-allowed;
+  }
+
+  input[type='number'] {
+    @apply p-2 border border-gray-300 rounded text-base;
+  }
+
+  input[type='number']:hover {
+    @apply border-gray-500;
+  }
+
+  input[type='number']:focus {
+    @apply outline-none border-blue-500 shadow-outline-blue;
+  }
+
+  input[type='number']:disabled {
+    @apply bg-gray-300 cursor-not-allowed;
+  }
+
+  input[type='date'] {
+    @apply p-2 border border-gray-300 rounded text-base;
+  }
+
+  input[type='date']:hover {
+    @apply border-gray-500;
+  }
+
+  input[type='date']:focus {
+    @apply outline-none border-blue-500 shadow-outline-blue;
+  }
+
+  input[type='date']:disabled {
+    @apply bg-gray-300 cursor-not-allowed;
+  }
+
   .navbar {
-    @apply mx-2;
+    @apply bg-orange-100 p-1 text-white flex sticky top-0 justify-center items-center;
+  }
+}
+
+@layer utilities {
+  .shadow-outline-blue {
+    box-shadow: 0 0 0 3px rgba(124, 173, 214, 0.5);
   }
 }

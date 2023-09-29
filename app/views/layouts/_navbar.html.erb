@@ -1,8 +1,20 @@
-<ul class='flex justify-center'>
+<ul class='navbar'>
+  <li class='mx-2'>
+    <h3> <%= link_to 'index', root_path%> </h3>
+  </li>
   <% if current_user %>
-    <li class='navbar'> <%= link_to 'logout', destroy_user_session_path(params[:id]), data: { turbo_method: :delete }%></li>
+    <li class='mx-2'>
+      <h3> <%= link_to 'add new book', new_book_path%> </h3>
+    </li>
+    <li class='mx-2'>
+      <h3> <%= link_to 'logout', destroy_user_session_path(params[:id]), data: { turbo_method: :delete }%> </h3>
+    </li>
   <% else %>
-    <li class='navbar'> <%= link_to 'login', new_user_session_path %> </li>
-    <li class='navbar'> <%= link_to 'signup', new_user_registration_path %> </li>
+    <li class='mx-2'>
+      <h3> <%= link_to 'login', new_user_session_path %> </h3>
+    </li>
+    <li class='mx-2'>
+      <h3> <%= link_to 'signup', new_user_registration_path %> </h3>
+    </li>
   <% end %>
 </ul>
