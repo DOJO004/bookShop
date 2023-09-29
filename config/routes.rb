@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root to: 'books#index' 
+
+  get 'select_role', to: 'users#select_role'
+  post 'select_store', to: 'users#select_store'
+  post 'select_client', to: 'users#select_client'
+
 end
