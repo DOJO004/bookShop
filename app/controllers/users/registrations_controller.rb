@@ -2,7 +2,6 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :authenticate_user!
-  before_action :user_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   def new
@@ -15,7 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     sign_in @user
     redirect_to select_role_path 
    else
-    flash.now[:alert] = 'check field'
+    flash.now[:notice] = 'check field'
     render :new
    end
   end
