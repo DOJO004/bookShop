@@ -7,17 +7,21 @@
       </div>
     <% end %>
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class:'input_text' %>
     <%= f.label :author %>
-    <%= f.text_field :author %>
+    <%= f.text_field :author, class:'input_text' %>
+    <%= f.label :overview %>
+    <%= f.text_area :overview, class:'ipnut_area'%>
+    <%= f.label :price%>
+    <%= f.number_field :price, class:'ipnut_number'%>
     <%= f.label :stocks %>
-    <%= f.number_field :stocks %>
+    <%= f.number_field :stocks, class:'ipnut_number' %>
     <%= f.label :publisher %>
-    <%= f.text_field :publisher %>
+    <%= f.text_field :publisher, class:'input_text' %>
     <%= f.label :publish_date %>
-    <%= f.date_field :publish_date %>
+    <%= f.date_field :publish_date, class:'input_date' %>
     <%= f.label :isbn %>
-    <%= f.number_field :isbn %>
+    <%= f.number_field :isbn, class:'ipnut_number' %>
     <%= f.submit 'Create Book' %>
   <% end %>
 </div>

@@ -1,1 +1,15 @@
 <h3>books index</h3>
+<% if @books.present? %>
+  <div class='books_card'>
+    <ul>
+      <% @books.each do |book|%>
+        <h2> <%= book.title%> </h2>
+        <li> Author: <%= book.author%> </li>
+        <li> Publisher: <%= book.publisher%> </li>
+        <li> Publish Date: <%= book.publish_date%> </li>
+        <li> stock: <%= book.stocks%> </li>
+        <li> price: <%= book.price%> </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

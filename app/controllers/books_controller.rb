@@ -2,7 +2,7 @@ class BooksController < ApplicationController
     before_action :authenticate_user!, except:[:index, :show]
 
     def index
-
+      @books = Book.all.order(id: :desc)
     end
 
     def show
@@ -14,6 +14,7 @@ class BooksController < ApplicationController
     end
 
     def create
+      debugger
       @book = Book.new(book_params)
       if @book.save
         redirect_to root_path, notice: 'cteate sucess'
