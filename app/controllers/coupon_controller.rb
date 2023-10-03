@@ -1,2 +1,3 @@
 class CouponController < ApplicationController
+  
 end

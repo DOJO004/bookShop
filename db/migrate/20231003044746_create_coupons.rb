@@ -6,7 +6,6 @@ class CreateCoupons < ActiveRecord::Migration[7.0]
       t.integer :amount
       t.float :discount
       t.datetime :expiration_date
-      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
