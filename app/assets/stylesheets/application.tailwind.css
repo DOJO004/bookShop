@@ -38,8 +38,11 @@
   .navbar {
     @apply bg-orange-100 p-1 text-white flex sticky top-0 justify-center items-center;
   }
-}
 
+  .books_card {
+    @apply bg-white rounded-lg shadow-lg p-4 m-2;
+  }
+}
 @layer utilities {
   .shadow-outline-blue {
     box-shadow: 0 0 0 3px rgba(124, 173, 214, 0.5);

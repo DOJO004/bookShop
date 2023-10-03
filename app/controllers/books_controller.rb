@@ -14,7 +14,6 @@ class BooksController < ApplicationController
     end
 
     def create
-      debugger
       @book = Book.new(book_params)
       if @book.save
         redirect_to root_path, notice: 'cteate sucess'
