@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'books#index' 
 
   resources :books
+  resources :coupon
   resource :cart, only:[:show, :destroy] do
     collection do
       post :add, path:'add/:id'
