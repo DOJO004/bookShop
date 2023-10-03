@@ -2,6 +2,8 @@
   <li class='mx-2'>
     <h3> <%= link_to 'index', root_path%> </h3>
   </li>
+  <li>
+  </li>
   <% if current_user %>
     <li class='mx-2'>
       <h3> <%= link_to 'add new book', new_book_path%> </h3>
@@ -17,4 +19,5 @@
       <h3> <%= link_to 'signup', new_user_registration_path %> </h3>
     </li>
   <% end %>
+  <h3> <%= link_to 'cart', cart_path %> </h3>
 </ul>

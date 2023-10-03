@@ -19,63 +19,30 @@
     @apply text-base font-bold text-gray-300 my-4;
   }
 
-  input {
-    @apply block;
+  .input_text {
+    @apply block p-2 border border-gray-300 rounded text-base hover:border-gray-500 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 w-full;
   }
 
-  input[type='text'] {
-    @apply p-2 border border-gray-300 rounded text-base;
+  .ipnut_number {
+    @apply block p-2 border border-gray-300 rounded text-base hover:border-gray-500 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200;
   }
 
-  input[type='text']:hover {
-    @apply border-gray-500;
+  .input_date {
+    @apply block p-2 border border-gray-300 rounded text-base hover:border-gray-500 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200;
   }
 
-  input[type='text']:focus {
-    @apply outline-none border-blue-500 shadow-outline-blue;
-  }
-
-  input[type='text']:disabled {
-    @apply bg-gray-300 cursor-not-allowed;
-  }
-
-  input[type='number'] {
-    @apply p-2 border border-gray-300 rounded text-base;
-  }
-
-  input[type='number']:hover {
-    @apply border-gray-500;
-  }
-
-  input[type='number']:focus {
-    @apply outline-none border-blue-500 shadow-outline-blue;
-  }
-
-  input[type='number']:disabled {
-    @apply bg-gray-300 cursor-not-allowed;
-  }
-
-  input[type='date'] {
-    @apply p-2 border border-gray-300 rounded text-base;
-  }
-
-  input[type='date']:hover {
-    @apply border-gray-500;
-  }
-
-  input[type='date']:focus {
-    @apply outline-none border-blue-500 shadow-outline-blue;
-  }
-
-  input[type='date']:disabled {
-    @apply bg-gray-300 cursor-not-allowed;
+  .ipnut_area {
+    @apply block p-2 border border-gray-300 rounded-md text-base hover:border-gray-500 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200;
   }
 
   .navbar {
     @apply bg-orange-100 p-1 text-white flex sticky top-0 justify-center items-center;
   }
-}
 
+  .books_card {
+    @apply bg-white rounded-lg shadow-lg p-4 m-2;
+  }
+}
 @layer utilities {
   .shadow-outline-blue {
     box-shadow: 0 0 0 3px rgba(124, 173, 214, 0.5);
