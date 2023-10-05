@@ -1,5 +1,5 @@
-<h3 class="text-2xl font-semibold">酷踫卷</h3>
-<%= link_to '新增酷踫卷', new_coupon_path, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full my-4 inline-block' %>
+<h3 class="text-2xl font-semibold">酷踫券</h3>
+<%= link_to '新增酷踫券', new_coupon_path, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full my-4 inline-block' %>
 <% if @coupons.present? %>
   <table class="table-auto mt-4">
     <thead>
@@ -28,5 +28,5 @@
     </tbody>
   </table>
 <% else %>
-  <p class="mt-4">目前沒有酷踫卷，去新增吧!</p>
+  <p class="mt-4">目前沒有酷踫券，去新增吧!</p>
 <% end %>

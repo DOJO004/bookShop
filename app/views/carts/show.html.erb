@@ -23,8 +23,8 @@
     </tbody>
   </table>
   <div class="sticky top-0 bg-white border p-4">
-    <%= link_to '套用折價卷', select_coupon_path, class:'submit-btn'%>
-    <%= link_to '取消折價卷' , cancle_cooupon_path, data:{turbo_method: :post}, class:'delete-btn'%>
+    <%= link_to '套用折價券', select_coupon_path, class:'submit-btn'%>
+    <%= link_to '取消折價券' , cancle_cooupon_path, data:{turbo_method: :post}, class:'delete-btn'%>
     <div class="mb-2 flex justify-end">總額: $ <%= @total_price %></div>
     <div class="mb-2 flex justify-end">折扣金額: <%= @discount_price%></div>
     <div class="font-bold mb-2 flex justify-end">折扣後總金額: $ <%=  @result_price %></div>

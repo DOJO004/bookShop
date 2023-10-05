@@ -20,23 +20,23 @@
   }
 
   .input_text {
-    @apply block p-2 border border-gray-300 rounded text-base hover:border-gray-500 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200;
+    @apply block p-2 border border-gray-300 rounded text-base hover:border-gray-400 focus:outline-none focus:border-blue-400 focus:ring focus:ring-blue-200;
   }
 
   .input_number {
-    @apply block p-2 border border-gray-300 rounded text-base hover:border-gray-500 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200;
+    @apply block p-2 border border-gray-300 rounded text-base hover:border-gray-400 focus:outline-none focus:border-blue-400 focus:ring focus:ring-blue-200;
   }
 
   .input_date {
-    @apply block p-2 border border-gray-300 rounded text-base hover:border-gray-500 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200;
+    @apply block p-2 border border-gray-300 rounded text-base hover:border-gray-400 focus:outline-none focus:border-blue-400 focus:ring focus:ring-blue-200;
   }
 
   .input_area {
-    @apply block p-2 border border-gray-300 rounded text-base hover:border-gray-500 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200;
+    @apply block p-2 border border-gray-300 rounded text-base hover:border-gray-400 focus:outline-none focus:border-blue-400 focus:ring focus:ring-blue-200;
   }
 
   .input_select {
-    @apply block p-2 border border-gray-300 rounded-md text-base hover:border-gray-500 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200;
+    @apply block p-2 border border-gray-300 rounded-md text-base hover:border-gray-400 focus:outline-none focus:border-blue-400 focus:ring focus:ring-blue-200;
   }
 
   .navbar {
@@ -48,14 +48,14 @@
   }
 
   .submit-btn {
-    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-2 rounded;
+    @apply bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 my-2 rounded;
   }
 
   .new-btn {
-    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full my-4 inline-block;
+    @apply bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full my-4 inline-block;
   }
   .delete-btn {
-    @apply bg-red-500 text-white py-2 px-4 mt-4 hover:bg-red-600;
+    @apply bg-red-400 text-white py-2 px-4 mt-4 hover:bg-red-600;
   }
 }
 @layer utilities {

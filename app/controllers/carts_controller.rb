@@ -33,15 +33,15 @@ class CartsController < ApplicationController
       session[:cart][:coupon] = @coupon.discount
       coupon = Coupon.find(find_coupon.first.coupon_id)
       coupon.increment!(:count)
-      redirect_to cart_path, notice: '折價卷已成功套用。'
+      redirect_to cart_path, notice: '折價券已成功套用。'
     else
-      redirect_to cart_path, alert: '折價卷代碼無效。'
+      redirect_to cart_path, alert: '折價券代碼無效。'
     end
   end
 
   def cancle_coupon
     session[:cart].delete("coupon")
-    redirect_to cart_path, notice: '已取消折價卷'
+    redirect_to cart_path, notice: '已取消折價券'
   end
 
   private
