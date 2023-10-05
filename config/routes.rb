@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get 'select_coupon', to: 'users#select_coupon'
   post 'apply_coupon', to: 'carts#apply_coupon'
   post 'cancle_cooupon', to: 'carts#cancle_coupon'
+  post 'create_order', to: 'carts#create_order'
 end

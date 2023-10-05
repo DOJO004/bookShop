@@ -28,6 +28,9 @@
     <div class="mb-2 flex justify-end">總額: $ <%= @total_price %></div>
     <div class="mb-2 flex justify-end">折扣金額: <%= @discount_price%></div>
     <div class="font-bold mb-2 flex justify-end">折扣後總金額: $ <%=  @result_price %></div>
+    <span class= 'flex justify-end'>
+      <%= link_to '送出訂單', create_order_path, data: { turbo_method: :post }, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full text-center' %>
+    </span>
   </div>
   <%= link_to '清空購物車', cart_path, data: { turbo_confirm: '確定要清空購物車嗎？', turbo_method: :delete }, class: 'delete-btn' %>
 <% end %>

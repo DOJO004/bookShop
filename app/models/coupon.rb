@@ -1,4 +1,6 @@
 class Coupon < ApplicationRecord
+  validates :name, :discount, :expiration_date, :count, :coupon_type, presence: true
+
   belongs_to :user, optional: true
   has_many :coupon_logs
  

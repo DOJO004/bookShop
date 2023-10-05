@@ -28,11 +28,7 @@ class CartsController < ApplicationController
     @coupon = Coupon.find_by(id: @coupon_id)
 
     if @coupon
-      find_coupon = CouponLog.where(user_id: current_user.id, coupon_id: @coupon_id)
-      find_coupon.update(state: 'used')
       session[:cart][:coupon] = @coupon.discount
-      coupon = Coupon.find(find_coupon.first.coupon_id)
-      coupon.increment!(:count)
       redirect_to cart_path, notice: '折價券已成功套用。'
     else
       redirect_to cart_path, alert: '折價券代碼無效。'
@@ -42,6 +38,16 @@ class CartsController < ApplicationController
   def cancle_coupon
     session[:cart].delete("coupon")
     redirect_to cart_path, notice: '已取消折價券'
+  end
+
+  def create_order
+    coupon_id = session[:coupon_id]
+    coupon_log = CouponLog.find_by(user_id: current_user.id, coupon_id: coupon_id)
+    coupon_log.update(state: 'used')
+    coupon = Coupon.find(coupon_id)
+    coupon.update(count: coupon.count + 1)
+    clear_cart
+    redirect_to root_path, notice: '訂單已送出'
   end
 
   private
