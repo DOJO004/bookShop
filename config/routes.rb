@@ -9,8 +9,9 @@ Rails.application.routes.draw do
       post :add, path:'add/:id'
     end
   end
-  get 'select_role', to: 'users#select_role'
-  post 'select_store', to: 'users#select_store'
-  post 'select_client', to: 'users#select_client'
-
+  resources :coupon
+  get ':name/coupon', to: 'coupon#show'
+  get 'select_coupon', to: 'users#select_coupon'
+  post 'apply_coupon', to: 'carts#apply_coupon'
+  post 'cancle_cooupon', to: 'carts#cancle_coupon'
 end

@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :authenticate_user!
-  # before_action :configure_account_update_params, only: [:update]
 
   def new
     @user = User.new
@@ -10,48 +7,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
    @user = User.new(user_params)
+   @user.role = 'client'
    if @user.save
     sign_in @user
-    redirect_to select_role_path 
+    set_coupon
+    redirect_to root_path, notice: '成功加入會員'
    else
     flash.now[:notice] = 'check field'
     render :new
    end
   end
 
-  # GET /resource/edit
-  # def edit
-  #   super
-  # end
-
-  # PUT /resource
-  # def update
-  #   super
-  # end
-
-  # DELETE /resource
-  # def destroy
-  #   super
-  # end
-
-  # GET /resource/cancel
-  # Forces the session data which is usually expired after sign
-  # in to be expired now. This is useful if the user wants to
-  # cancel oauth signing in/up in the middle of the process,
-  # removing all OAuth session data.
-  # def cancel
-  #   super
-  # end
-
   private
 
-  # If you have extra params to permit, append them to the sanitizer.
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
-  # If you have extra params to permit, append them to the sanitizer.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
-  # end
+  def set_coupon
+    CouponLog.create(user_id: current_user.id, coupon_id: 5)
+    CouponLog.create(user_id: current_user.id, coupon_id: 6)
+  end
 end

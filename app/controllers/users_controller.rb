@@ -1,16 +1,10 @@
 class UsersController < ApplicationController
-  def select_role
-  end
-
-  def select_store
-    current_user.role = 'store'
-    current_user.save
-    redirect_to root_path, notice: 'you are store now!' 
-  end
-
-  def select_client
-    current_user.role = 'client'
-    current_user.save
-    redirect_to root_path, notice: 'you are client now!'  
+  def select_coupon
+    if current_user
+    @coupons_id = current_user.coupon_logs.pluck(:coupon_id)
+    @coupons = Coupon.where(@coupon_id)
+    else
+      redirect_to cart_path, notice: '登入享有優惠卷喔!'
+    end
   end
 end

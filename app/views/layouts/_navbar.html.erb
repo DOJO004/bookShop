@@ -1,23 +1,34 @@
 <ul class='navbar'>
   <li class='mx-2'>
-    <h3> <%= link_to 'index', root_path%> </h3>
+    <h3> <%= link_to '首頁', root_path%> </h3>
   </li>
   <li>
   </li>
-  <% if current_user %>
+  <% if current_user && current_user.role === 'admin' %>
     <li class='mx-2'>
-      <h3> <%= link_to 'add new book', new_book_path%> </h3>
+      <h3> <%= link_to '新增書籍', new_book_path%> </h3>
     </li>
     <li class='mx-2'>
-      <h3> <%= link_to 'logout', destroy_user_session_path(params[:id]), data: { turbo_method: :delete }%> </h3>
+      <h3> <%= link_to '酷踫卷', coupon_index_path %> </h3>
+    </li>
+  <% elsif current_user && current_user.role == 'client' %>
+    <li class='mx-2'>
+      <h3> <%= link_to '購物車', cart_path %> </h3>
     </li>
   <% else %>
     <li class='mx-2'>
-      <h3> <%= link_to 'login', new_user_session_path %> </h3>
+      <h3> <%= link_to '購物車', cart_path %> </h3>
     </li>
     <li class='mx-2'>
-      <h3> <%= link_to 'signup', new_user_registration_path %> </h3>
+      <h3> <%= link_to '登入', new_user_session_path %> </h3>
+    </li>
+    <li class='mx-2'>
+      <h3> <%= link_to '註冊', new_user_registration_path %> </h3>
     </li>
   <% end %>
-  <h3> <%= link_to 'cart', cart_path %> </h3>
+  <% if current_user%>
+    <li class='mx-2'>
+      <h3> <%= link_to '登出', destroy_user_session_path(params[:id]), data: { turbo_method: :delete }%> </h3>
+    </li>
+  <% end %>
 </ul>

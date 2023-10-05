@@ -20,7 +20,7 @@
   }
 
   .input_text {
-    @apply block p-2 border border-gray-300 rounded text-base hover:border-gray-500 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 w-full;
+    @apply block p-2 border border-gray-300 rounded text-base hover:border-gray-500 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200;
   }
 
   .ipnut_number {
@@ -41,6 +41,17 @@
 
   .books_card {
     @apply bg-white rounded-lg shadow-lg p-4 m-2;
+  }
+
+  .submit-btn {
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-2 rounded;
+  }
+
+  .new-btn {
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full my-4 inline-block;
+  }
+  .delete-btn {
+    @apply bg-red-500 text-white py-2 px-4 mt-4 hover:bg-red-600;
   }
 }
 @layer utilities {
