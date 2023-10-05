@@ -25,7 +25,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def set_coupon
-    CouponLog.create(user_id: current_user.id, coupon_id: 5)
-    CouponLog.create(user_id: current_user.id, coupon_id: 6)
+    coupon_names = ['九折券', '五百元折價券']
+    coupon_names.each do |name|
+      coupon_id = Coupon.find_by(name: name)&.id
+      CouponLog.create(user_id: current_user.id, coupon_id: coupon_id) if coupon_id
+    end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_03_071632) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_05_062719) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "author"
@@ -29,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_03_071632) do
     t.integer "coupon_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "state", default: "usable"
     t.index ["coupon_id"], name: "index_coupon_logs_on_coupon_id"
     t.index ["user_id"], name: "index_coupon_logs_on_user_id"
   end
@@ -36,11 +37,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_03_071632) do
   create_table "coupons", force: :cascade do |t|
     t.string "name"
     t.integer "code"
-    t.integer "amount"
     t.float "discount"
     t.datetime "expiration_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "count", default: 0
+    t.string "coupon_type"
   end
 
   create_table "shopping_carts", force: :cascade do |t|
