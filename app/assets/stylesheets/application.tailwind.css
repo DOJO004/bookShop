@@ -23,7 +23,7 @@
     @apply block p-2 border border-gray-300 rounded text-base hover:border-gray-500 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200;
   }
 
-  .ipnut_number {
+  .input_number {
     @apply block p-2 border border-gray-300 rounded text-base hover:border-gray-500 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200;
   }
 
@@ -31,7 +31,11 @@
     @apply block p-2 border border-gray-300 rounded text-base hover:border-gray-500 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200;
   }
 
-  .ipnut_area {
+  .input_area {
+    @apply block p-2 border border-gray-300 rounded-md text-base hover:border-gray-500 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200;
+  }
+
+  .input_select {
     @apply block p-2 border border-gray-300 rounded-md text-base hover:border-gray-500 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200;
   }
 
