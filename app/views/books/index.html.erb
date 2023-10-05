@@ -1,4 +1,4 @@
-<h2>books index</h2>
+<h2>書籍列表</h2>
 <% if @books.present? %>
   <ul>
     <% @books.each do |book|%>
@@ -9,7 +9,12 @@
         <li> Publish Date: <%= book.publish_date%> </li>
         <li> stock: <%= book.stocks%> </li>
         <li> price: <%= book.price%> </li>
-        <li> <%= link_to '加入購物車', add_cart_path(book.id), data:{ turbo_method: :post }%> </li>
+        <% if current_user.present? && current_user.role === 'admin' %>
+          <li> <%= link_to '編輯', edit_book_path(book.id) %></li>
+          <li> <%= link_to '刪除', book_path(book.id), data: { turbo_method: :delete, turbo_confirm: '確定刪除嗎?' }%></li>
+        <% else %>
+          <li> <%= link_to '加入購物車', add_cart_path(book.id), data:{ turbo_method: :post }%> </li>
+        <% end %>
       </div>
     <% end %>
   </ul>

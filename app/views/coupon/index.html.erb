@@ -21,6 +21,8 @@
           <td class="px-4 py-2"><%= coupon.discount %></td>
           <td class="px-4 py-2"><%= coupon.expiration_date.strftime("%Y年%m月%d號") %></td>
           <td class="px-4 py-2"><%= coupon.count %></td>
+          <td class="px-4 py-2"> <%= link_to '修改', edit_coupon_path(coupon.id) %> </td>
+          <td class="px-4 py-2"> <%= link_to '刪除', coupon_path(coupon.id), data: { turbo_method: :delete, turbo_confirm: '確定刪除嗎?'}%> </td>
         </tr>
       <% end %>
     </tbody>

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def select_coupon
     if current_user
       @coupon_ids = current_user.coupon_logs.pluck(:coupon_id)

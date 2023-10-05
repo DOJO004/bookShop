@@ -1,0 +1,24 @@
+<%= form_with(model: @book, data:{turbo: false}) do |f| %>
+  <% if @book.errors.any? %>
+    <div id="error_explanation">
+      <p>紅字為必填</p>
+    </div>
+  <% end %>
+  <%= f.label :title, '書名' %>
+  <%= f.text_field :title, class:'input_text' %>
+  <%= f.label :author, '作者' %>
+  <%= f.text_field :author, class:'input_text' %>
+  <%= f.label :overview, '簡介' %>
+  <%= f.text_area :overview, class:'input_area'%>
+  <%= f.label :price, '金額'%>
+  <%= f.number_field :price, class:'input_number'%>
+  <%= f.label :stocks, '數量'%>
+  <%= f.number_field :stocks, class:'input_number' %>
+  <%= f.label :publisher, '出版社' %>
+  <%= f.text_field :publisher, class:'input_text' %>
+  <%= f.label :publish_date, '出版日期'%>
+  <%= f.date_field :publish_date, class:'input_date' %>
+  <%= f.label :isbn %>
+  <%= f.number_field :isbn, class:'input_number' %>
+  <%= f.submit '送出', class:'submit-btn' %>
+<% end %>
