@@ -1,0 +1,22 @@
+<div class="p-4">
+  <h3 class="text-2xl font-bold mb-4">選擇酷踫卷</h3>
+  <ul class="flex border-b-4 border-gray-300 py-2">
+    <li class="mx-2">選擇</li>
+    <li class="mx-2">名稱</li>
+    <li class="mx-2">到期月份</li>
+    <li class="mx-2">剩餘數量</li>
+  </ul>
+  <%= form_with(model: @cart, url: apply_coupon_path) do |f| %>
+    <% @coupons.each do |coupon| %>
+      <ul class="flex border-b-4 border-gray-300 py-2">
+        <li class="mx-2"><%= f.radio_button :coupon_id, coupon.id %></li>
+        <li class="mx-2"><%= coupon.name %></li>
+        <li class="mx-2"><%= coupon.expiration_date.strftime("%Y年%m月%d號") %></li>
+        <li class="mx-2"><%= coupon.amount %></li>
+      </ul>
+    <% end %>
+    <div class="text-center">
+      <%= f.submit "套用酷踫卷", class: 'submit-btn mt-4' %>
+    </div>
+  <% end %>
+</div>

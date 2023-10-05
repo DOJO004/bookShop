@@ -1,0 +1,14 @@
+<h3>新增酷踫卷</h3>
+<div class='flex justify-center'>
+  <%= form_with(model: @coupon, url: coupon_index_path) do |f|%>
+    <%= f.label :name, '名稱' %>
+    <%= f.text_field :name, class:'input_text' %>
+    <%= f.label :amount, '使用次數' %>
+    <%= f.number_field :amount, class:'ipnut_number' %>
+    <%= f.label :discount, '折價比' %>
+    <%= f.number_field :discount, class:'ipnut_number', step: '0.1' %>
+    <%= f.label :expiration_date, '到期日' %>
+    <%= f.date_field :expiration_date, class:'input_date' %>
+    <%= f.submit '新增', class:'submit-btn' %>
+  <% end %>
+</div>

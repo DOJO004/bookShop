@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   has_many :coupon_logs
-
+  enum role: { client: 'client', admin: 'admin' }
 end
