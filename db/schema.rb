@@ -42,6 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_05_020144) do
     t.datetime "expiration_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "count", default: 0
   end
 
   create_table "shopping_carts", force: :cascade do |t|

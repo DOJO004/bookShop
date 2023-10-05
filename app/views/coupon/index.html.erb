@@ -20,7 +20,7 @@
           <td class="px-4 py-2"><%= coupon.amount %></td>
           <td class="px-4 py-2"><%= coupon.discount %></td>
           <td class="px-4 py-2"><%= coupon.expiration_date.strftime("%Y年%m月%d號") %></td>
-          <td class="px-4 py-2"></td>
+          <td class="px-4 py-2"><%= coupon.count %></td>
         </tr>
       <% end %>
     </tbody>
