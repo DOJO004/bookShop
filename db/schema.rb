@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_05_062719) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_05_124110) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "author"
@@ -36,7 +36,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_05_062719) do
 
   create_table "coupons", force: :cascade do |t|
     t.string "name"
-    t.integer "code"
+    t.string "code"
     t.float "discount"
     t.datetime "expiration_date"
     t.datetime "created_at", null: false
