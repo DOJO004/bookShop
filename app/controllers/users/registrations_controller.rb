@@ -25,7 +25,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def set_coupon
-    CouponLog.create(user_id: current_user.id, coupon_id: 5)
-    CouponLog.create(user_id: current_user.id, coupon_id: 6)
+    coupon_id = Coupon.find_by(name: '九折卷').id
+    CouponLog.create(user_id: current_user.id, coupon_id: coupon_id)
   end
 end

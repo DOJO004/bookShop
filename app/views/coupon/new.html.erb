@@ -3,7 +3,7 @@
   <%= form_with(model: @coupon, url: coupon_index_path) do |f|%>
     <%= f.label :name, '名稱' %>
     <%= f.text_field :name, class:'input_text' %>
-    <%= f.label :amount, '使用次數' %>
+    <%= f.label :amount, '數量' %>
     <%= f.number_field :amount, class:'ipnut_number' %>
     <%= f.label :discount, '折價比' %>
     <%= f.number_field :discount, class:'ipnut_number', step: '0.1' %>

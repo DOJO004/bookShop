@@ -24,10 +24,14 @@ class CartsController < ApplicationController
   end
 
   def apply_coupon
+    debugger
     @coupon_id = params[:coupon_id].to_i
+    session[:coupon_id] = params[:coupon_id].to_i
     @coupon = Coupon.find_by(id: @coupon_id)
 
     if @coupon
+      find_coupon = CouponLog.where(user_id: current_user.id, coupon_id: @coupon_id)
+      find_coupon.update(state: 'used')
       session[:cart][:coupon] = @coupon.discount
       redirect_to cart_path, notice: '折價卷已成功套用。'
     else
