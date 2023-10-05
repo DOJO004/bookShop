@@ -48,7 +48,7 @@ class CouponController < ApplicationController
   end
 
   def generate_coupon_code
-    coupon_code = Date.today.strftime('%Y%m%d') + rand(100...999).to_s
+    coupon_code = Date.today.strftime('%Y%m%d') + rand(1...99).to_s
     @coupon.code = coupon_code
   end
 
