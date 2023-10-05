@@ -1,10 +1,12 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true, uniqueness: true
   has_many :coupon_logs
   enum role: { client: 'client', admin: 'admin' }
+
+  def usable_coupons
+    coupon_logs.where(state: 'usable').includes(:coupon).map(&:coupon)
+  end
 end
